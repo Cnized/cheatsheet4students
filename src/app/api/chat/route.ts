@@ -3,30 +3,39 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const { message } = await request.json();
-
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/gpt2",  // Using GPT-2 - very stable
+      "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
       {
+        method: "POST",
         headers: {
           "Authorization": `Bearer ${process.env.HF_API_KEY}`,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        method: "POST",
         body: JSON.stringify({
-          inputs: message,
+          inputs: `<|system|>You are a helpful AI assistant. Provide accurate and relevant information.
+<|user|>${message}
+<|assistant|>`,
           parameters: {
-            max_new_tokens: 250,
-            return_full_text: false
+            max_new_tokens: 1000,
+            temperature: 0.7,
+            top_p: 0.95,
+            repetition_penalty: 1.15
           }
-        })
+        }),
       }
     );
 
-    const result = await response.json();
-    return NextResponse.json({ message: result[0].generated_text });
+    const data = await response.json();
+    let answer = data[0].generated_text;
     
+    // Clean up the response
+    answer = answer.split('<|assistant|>').pop() || answer;
+    answer = answer.split('<|user|>')[0] || answer;
+    answer = answer.trim();
+
+    return NextResponse.json({ message: answer });
   } catch (error) {
-    console.error('Chat error:', error);
-    return NextResponse.json({ error: 'AI service temporarily unavailable' }, { status: 500 });
+    console.error('Error:', error);
+    return NextResponse.json({ error: "Failed to get response" }, { status: 500 });
   }
 }
