@@ -106,6 +106,57 @@ const formulas = {
       formula: 'ⁿCᵣ = n! / (r! * (n-r)!)',
       description: 'Number of ways to choose r items from n items'
     },
+    {
+      id: 'math11',
+      title: 'Gaussian Distribution',
+      formula: 'f(x) = (1 / (σ * √(2π))) * e^(-(x-μ)^2 / (2σ^2))',
+      description: 'Probability density function of the normal distribution'
+    },
+    {
+      id: 'math12',
+      title: 'Golden Ratio',
+      formula: 'φ = (1 + √5) / 2 ≈ 1.618',
+      description: 'Ratio found in many natural and man-made structures'
+    },
+    {
+      id: 'math13',
+      title: 'Bayes\' Theorem',
+      formula: 'P(A|B) = (P(B|A) * P(A)) / P(B)',
+      description: 'Calculating conditional probabilities'
+    },
+    {
+      id: 'math14',
+      title: 'Stirling\'s Formula',
+      formula: 'n! ≈ √(2πn) * (n/e)^n',
+      description: 'Approximation of the factorial function'
+    },
+    {
+      id: 'math15',
+      title: 'Cauchy-Schwarz Inequality',
+      formula: '(Σ a_i b_i)² ≤ (Σ a_i²) * (Σ b_i²)',
+      description: 'Relationship between dot product and vector magnitudes'
+    },
+    {
+      id: 'math16',
+      title: 'Fourier Series',
+      formula: 'f(x) = a_0/2 + Σ (a_n cos(nx) + b_n sin(nx))',
+      description: 'Represents a periodic function as the sum of sinusoidal functions'
+    },
+    {
+      id: 'math17',
+      title: 'Gamma Function',
+      formula: 'Γ(x) = ∫₀^∞ t^(x-1) e^(-t) dt',
+      description: 'Extension of the factorial function to non-integer values'
+    },
+    {
+      id: 'math18',
+      title: 'Euler\'s Totient Function',
+      formula: 'φ(n) = n ∏ (1 - 1/p)',
+      description: 'Number of positive integers less than or equal to n that are relatively prime to n'
+    },
+    
+    
+    
 
   ],
   physics: [
@@ -168,6 +219,54 @@ const formulas = {
       title: 'Momentum Conservation',
       formula: 'm₁v₁ + m₂v₂ = m₁v₁\' + m₂v₂\'',
       description: 'Total momentum remains constant in a closed system'
+    },
+    {
+      id: 'phys11',
+      title: 'Hooke\'s Law',
+      formula: 'F = -kx',
+      description: 'Relationship between force and displacement for elastic materials'
+    },
+    {
+      id: 'phys12',
+      title: 'Snell\'s Law',
+      formula: 'n1 * sin(θ1) = n2 * sin(θ2)',
+      description: 'Refraction of light at the boundary between two media'
+    },
+    {
+      id: 'phys13',
+      title: 'Planck\'s Law',
+      formula: 'B(λ, T) = (2hc^2) / (λ^5 * (e^(hc / (λkT)) - 1))',
+      description: 'Describes the spectral radiance of electromagnetic radiation'
+    },
+    {
+      id: 'phys14',
+      title: 'Ampère\'s Law',
+      formula: '∮B·dl = μ₀I',
+      description: 'Relationship between the magnetic field around a conductor and the electric current in the conductor'
+    },
+    {
+      id: 'phys15',
+      title: 'Heisenberg Uncertainty Principle',
+      formula: 'ΔxΔp ≥ h/4π',
+      description: 'Fundamental limit on the precision with which certain pairs of physical properties can be known'
+    },
+    {
+      id: 'phys16',
+      title: 'Lorentz Transformation',
+      formula: 'x′ = γ(x - vt), t′ = γ(t - vx/c²)',
+      description: 'Equations that describe how space and time coordinates are transformed between different inertial frames'
+    },
+    {
+      id: 'phys17',
+      title: 'Bohr Magneton',
+      formula: 'μ = eℏ/2m',
+      description: 'Fundamental unit of magnetic moment in atomic and subatomic systems'
+    },
+    {
+      id: 'phys18',
+      title: 'Stefan-Boltzmann Law',
+      formula: 'P = σT⁴',
+      description: 'Relationship between the total radiant heat flux and the absolute temperature of a black body'
     },
 
     
@@ -232,7 +331,55 @@ const formulas = {
       title: 'Torus Volume',
       formula: 'V = 2π²Rr²',
       description: 'Volume of a torus with major radius R and minor radius r'
-    }
+    },
+    {
+  id: 'geom11',
+  title: 'Pythagorean Identity',
+  formula: 'sin²(x) + cos²(x) = 1',
+  description: 'Relationship between the sine and cosine of an angle'
+},
+{
+  id: 'geom12',
+  title: 'Euler\'s Formula',
+  formula: 'v - e + f = 2',
+  description: 'Relationship between the number of vertices, edges, and faces in a polyhedron'
+},
+{
+  id: 'geom13',
+  title: 'Heron\'s Formula',
+  formula: 'A = √(s(s-a)(s-b)(s-c))',
+  description: 'Calculating the area of a triangle given the lengths of its sides'
+},
+{
+  id: 'geom14',
+  title: 'Euler\'s Identity',
+  formula: 'e^(iπ) + 1 = 0',
+  description: 'Fundamental identity in complex analysis and trigonometry'
+},
+{
+  id: 'geom15',
+  title: 'Cavalieri\'s Principle',
+  formula: 'V = Bh',
+  description: 'Relationship between the volumes of two solids with equal heights and equal cross-sectional areas at corresponding heights'
+},
+{
+  id: 'geom16',
+  title: 'Descartes\' Formula',
+  formula: 'V - E + F = 2',
+description: 'Relationship between the number of vertices, edges, and faces of a convex polyhedron'
+},
+{
+  id: 'geom17',
+  title: 'Pythagorean Theorem',
+  formula: 'a² + b² = c²',
+  description: 'Relationship between the lengths of the sides of a right triangle'
+},
+{
+  id: 'geom18',
+  title: 'Euler\'s Formula for Polyhedra',
+  formula: 'V - E + F = 2',
+  description: 'Relationship between the number of vertices, edges, and faces of a convex polyhedron'
+},
 
   ],
   chemistry: [
@@ -296,6 +443,54 @@ const formulas = {
       formula: 'K = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ',
       description: 'Equilibrium constant for chemical reactions'
     },
+    {
+      id: 'chem11',
+      title: 'Clausius-Clapeyron Equation',
+      formula: 'ln(P2/P1) = (ΔHvap/R) * (1/T1 - 1/T2)',
+      description: 'Relationship between vapor pressure, temperature, and enthalpy of vaporization'
+    },
+    {
+      id: 'chem12',
+      title: 'Faraday\'s Law of Electrolysis',
+      formula: 'm = (Q * M) / (n * F)',
+      description: 'Relationship between the amount of a substance deposited and the total electric charge'
+    },
+    {
+      id: 'chem13',
+      title: 'Henry\'s Law',
+      formula: 'c = kP',
+      description: 'Relationship between the concentration of a gas dissolved in a liquid and the partial pressure of the gas above the liquid'
+    },
+    {
+      id: 'chem14',
+      title: 'Arrhenius Equation',
+      formula: 'k = A * e^(-Ea/RT)',
+      description: 'Relationship between the rate constant of a reaction and temperature'
+    },
+    {
+      id: 'chem15',
+      title: 'Boyle\'s Law',
+      formula: 'PV = k',
+      description: 'Relationship between the pressure and volume of a gas at constant temperature'
+    },
+    {
+      id: 'chem16',
+      title: 'Raoult\'s Law',
+      formula: 'p_i = x_i * p_i°',
+      description: 'Relationship between the vapor pressure of a component in a solution and its mole fraction'
+    },
+    {
+      id: 'chem17',
+      title: 'Nernst Equation',
+      formula: 'E = E° - (RT/nF) ln(Q)',
+      description: 'Relationship between the reduction potential of a cell and the activities of the reactants and products'
+    },
+    {
+      id: 'chem18',
+      title: 'Gibbs Free Energy',
+      formula: 'ΔG = ΔH - TΔS',
+      description: 'Relationship between the change in Gibbs free energy, enthalpy, and entropy for a process'
+    },
 
   ]
 };
@@ -313,6 +508,21 @@ const aiResources = [
         name: 'Photomath',
         description: 'Camera calculator and math solver',
         url: 'https://photomath.com'
+      }
+    ]
+  },
+  {
+    title: 'Creative AI Tools',
+    tools: [
+      {
+        name: 'DALL-E',
+        description: 'AI model that can create realistic images and art from text descriptions',
+        url: 'https://openai.com/product/dall-e-2'
+      },
+      {
+        name: 'Midjourney',
+        description: 'AI-powered image generation tool that creates unique artwork',
+        url: 'https://www.midjourney.com/'
       }
     ]
   },
@@ -435,7 +645,39 @@ const aiResources = [
         url: 'https://www.grammarly.com'
       }
     ]
-  }
+  },
+  // Add to the 'aiResources' array
+{
+  title: 'Econometrics AI Tools',
+  tools: [
+    {
+      name: 'Alteryx',
+      description: 'Data blending and advanced analytics platform with AI capabilities',
+      url: 'https://www.alteryx.com/'
+    },
+    {
+      name: 'Dataiku',
+      description: 'Collaborative data science and machine learning platform',
+      url: 'https://www.dataiku.com/'
+    }
+  ]
+},
+
+{
+  title: 'Medical AI Tools',
+  tools: [
+    {
+      name: 'Corti',
+      description: 'AI-powered real-time clinical decision support for emergency services',
+      url: 'https://corti.ai/'
+    },
+    {
+      name: 'Paige',
+      description: 'AI-based cancer detection and diagnosis tools for pathologists',
+      url: 'https://www.paige.ai/'
+    }
+  ]
+}
 ];
 
 const FormulaHub = () => {
@@ -480,7 +722,7 @@ const FormulaHub = () => {
   };
 
   const getFilteredContent = () => {
-    if (activeTab === 'ai') {
+    if (activeTab === 'aI Tools') {
       return aiResources.filter(resource =>
         resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         resource.tools.some(tool =>
@@ -543,7 +785,7 @@ const FormulaHub = () => {
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
       <div className="border-b border-gray-200 overflow-x-auto"> 
       <nav className="flex -mb-px space-x-4 sm:space-x-8 min-w-max">
-            {Object.keys(formulas).concat(['ai', 'chat']).map((tab) => (
+            {Object.keys(formulas).concat(['aI Tools', 'chat']).map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleTabChange(tab)}
@@ -590,7 +832,7 @@ const FormulaHub = () => {
           <div className="flex justify-center items-center h-64">
             <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
           </div>
-        ) : activeTab === 'ai' ? (
+        ) : activeTab === 'aI Tools' ? (
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {getFilteredContent().map((resource, index) => (
