@@ -662,14 +662,15 @@ const FormulaHub = () => {
         )}
       </main>
 
-      {/* Footer */}
-            <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-4">
-          <p className="text-center font-semibold text-xs sm:text-sm text-gray-600">
-            Kian Kheiri N. <span className="font-bold">(Cnized)</span> © 2023-2025
-          </p>
-        </div>
-      </footer>
+     
+{/* Footer */}
+<footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <p className="text-center text-gray-600 text-sm font-semibold">
+      Kian Kheiri N. <span className="font-bold">(Cnized)</span> © 2023-2025
+    </p>
+  </div>
+</footer>
 
       {/* Login/Signup Modal */}
       {showLoginModal && (
