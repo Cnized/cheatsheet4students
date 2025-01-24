@@ -503,34 +503,34 @@ const FormulaHub = () => {
     <div className="min-h-screen bg-gray-50 pb-16">
       {/* Navigation */}
       <nav className="bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex justify-between h-14 sm:h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
                 <h1 className="text-xl font-bold text-gray-900">Cheat Sheet 4 Students !</h1>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {!isAuthenticated ? (
                 <>
                   <button
                     onClick={() => setShowLoginModal(true)}
-                    className="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                    className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
                   >
                     Login
                   </button>
                   <button
                     onClick={() => setShowLoginModal(true)}
-                    className="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-gray-50"
-                  >
+                    className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium text-indigo-600 bg-white hover:bg-gray-50 rounded-md"
+                    >
                     Sign up
                   </button>
                 </>
               ) : (
                 <button
                   onClick={logout}
-                  className="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                >
+                  className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
+                  >
                   Logout
                 </button>
               )}
@@ -541,14 +541,14 @@ const FormulaHub = () => {
 
       {/* Tab Navigation */}
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <div className="border-b border-gray-200">
-          <nav className="flex -mb-px space-x-8">
+      <div className="border-b border-gray-200 overflow-x-auto"> 
+      <nav className="flex -mb-px space-x-4 sm:space-x-8 min-w-max">
             {Object.keys(formulas).concat(['ai', 'chat']).map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleTabChange(tab)}
                 className={`
-                  py-4 px-1 border-b-2 font-medium text-sm
+                  py-2 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap
                   ${activeTab === tab
                     ? 'border-indigo-500 text-indigo-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}
@@ -565,26 +565,26 @@ const FormulaHub = () => {
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
   {activeTab !== 'chat' && (
-    <div className="mb-6">
-      <input
-        type="text"
-        placeholder={`Search ${activeTab}...`}
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full p-2 border rounded mb-4"
-      />
-      <div className="bg-blue-50 p-4 rounded-lg">
-        <p className="text-blue-600 text-center">
-          Need help with {activeTab}? 
-          <button 
-            onClick={() => handleTabChange('chat')} 
-            className="ml-2 text-indigo-600 font-medium hover:underline"
-          >
-            Ask our AI assistant
-          </button>
-        </p>
-      </div>
-    </div>
+<div className="mb-4 sm:mb-6">
+  <input
+    type="text"
+    placeholder={`Search ${activeTab}...`}
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    className="w-full p-2 sm:p-3 text-sm border rounded"
+  />
+  <div className="bg-blue-50 p-3 sm:p-4 rounded-lg mt-3">
+    <p className="text-blue-600 text-center text-sm">
+      Need help with {activeTab}? 
+      <button 
+        onClick={() => handleTabChange('chat')} 
+        className="ml-1 sm:ml-2 text-indigo-600 font-medium hover:underline"
+      >
+        Ask our AI assistant
+      </button>
+    </p>
+  </div>
+</div>
   )}
         {loading ? (
           <div className="flex justify-center items-center h-64">
@@ -592,7 +592,7 @@ const FormulaHub = () => {
           </div>
         ) : activeTab === 'ai' ? (
           
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {getFilteredContent().map((resource, index) => (
               <Card key={index}>
                 <CardHeader>
@@ -626,20 +626,20 @@ const FormulaHub = () => {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {getFilteredContent().map((formula) => (
               <Card key={formula.id}>
-                <CardHeader>
-                  <CardTitle>{formula.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-lg font-mono">{formula.formula}</p>
+                <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="text-base sm:text-lg">{formula.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="p-4 sm:p-6">
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                  <p className="text-sm sm:text-lg font-mono break-words">{formula.formula}</p>
                   <button
                     onClick={() => copyToClipboard(formula.formula, formula.id)}
-                    className="mt-2 text-sm text-indigo-600 hover:text-indigo-500"
+                    className="mt-2 text-xs sm:text-sm text-indigo-600 hover:text-indigo-500"
                   >
                     {copiedId === formula.id ? 'Copied!' : 'Copy Formula'}
                   </button>
                 </div>
-                <p className="mt-4 text-sm text-gray-500">
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500">
                   {formula.description}
                 </p>
               </CardContent>
@@ -663,10 +663,10 @@ const FormulaHub = () => {
       </main>
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-center text-gray-500 text-sm">
-            Kian Kheiri N. (Cnized) © 2023-2025
+            <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-4">
+          <p className="text-center font-semibold text-xs sm:text-sm text-gray-600">
+            Kian Kheiri N. <span className="font-bold">(Cnized)</span> © 2023-2025
           </p>
         </div>
       </footer>
