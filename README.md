@@ -51,8 +51,7 @@ npm run dev
 ```
 Visit 👉 http://localhost:3000
 
-📄 License
+## 📄 License
 
-This project is licensed under the MIT License.
-
-Built with ❤️ by @TheCnized
+📝 Licensed under the **MIT License**.  
+💻 Developed with ❤️ by Kian Kheiri N. ([@TheCnized](https://github.com/TheCnized))
