@@ -54,4 +54,6 @@ Visit 👉 http://localhost:3000
 ## 📄 License
 
 📝 Licensed under the **MIT License**.  
-💻 Developed with ❤️ by Kian Kheiri N. ([@TheCnized](https://github.com/TheCnized))
+
+## 👨‍💻Author
+💻 Developed with ❤️ by Kian Kheiri N. ([@Cnized](https://github.com/Cnized))
